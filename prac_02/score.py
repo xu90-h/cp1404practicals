@@ -17,8 +17,9 @@ def user_score(score):
 def main():
     """Get the user's score, display the result and display the random score"""
     score = float(input("Enter score: "))
-    print(score)
+    print(user_score(score))
     random_score = random.randint(MIN_SCORE, MAX_SCORE)
     print("Random score is: ", random_score)
-    print(random_score)
+    print(user_score(random_score))
 
+main()
