@@ -9,6 +9,7 @@ def get_password(MIN_LENGTH):
     password = input("Enter password: ")
     while len(password) < MIN_LENGTH:
         print(f"Password too easy, please enter at least {MIN_LENGTH} characters.")
+        password = input("Enter password: ")
     return password
 
 def print_stars(password):
