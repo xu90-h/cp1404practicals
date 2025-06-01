@@ -12,6 +12,7 @@ def fahrenheit_to_celsius(fahrenheit):
 
 def main():
     """Run this program"""
+    print(MENU)
     choice = input(">>> ")
     while choice != "Q":
         if choice == "C":
