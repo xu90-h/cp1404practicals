@@ -1,7 +1,7 @@
 import score
 from score import user_score
 
-MENU = """Menu:
+MENU = """\nMenu:
 (G)et a valid score
 (P)rint result
 (S)how stars
@@ -28,7 +28,7 @@ def main():
         if choice == "G":
             score_value = get_valid_score()
         elif choice == "P":
-            print()
+            print(user_score(score_value))
         elif choice == "S":
             print(show_stars(score_value))
         else:
