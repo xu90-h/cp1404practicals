@@ -21,7 +21,7 @@ def show_stars(score_value):
 def main():
     """Firstly, get a value score, then enter the menu loop."""
     print(MENU)
-    choice = input(">>> ")
+    choice = input(">>> ".upper())
 
     while choice != "Q":
         if choice == "G":
@@ -33,7 +33,7 @@ def main():
         else:
             print("Invalid option.")
         print(MENU)
-        choice = input(">>> ")
+        choice = input(">>> ".upper())
 
     print("See you!")
 
