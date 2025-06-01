@@ -1,4 +1,5 @@
 import score
+from score import user_score
 
 MENU = """Menu:
 (G)et a valid score
