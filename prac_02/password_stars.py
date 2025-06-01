@@ -9,3 +9,11 @@ def get_password(MIN_LENGTH):
 
 def print_stars(password):
     print("*" * len(password))
+
+def main():
+    password = get_password(MIN_LENGTH)
+    print(print_stars(password))
+
+
+if __name__ == '__main__':
+    main()
