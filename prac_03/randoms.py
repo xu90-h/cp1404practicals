@@ -11,3 +11,7 @@ print(random.randrange(3, 10, 2))  # line 2
 print(random.uniform(2.5, 5.5))  # line 3
 # Return a random number of type float.
 # The minimum value is 2.5 and the maximum value is 5.5.
+
+
+print(f"Random number between 1 and 100: {random.randint(1, 100)}")
+# Produce a random number between 1 and 100 inclusive.
