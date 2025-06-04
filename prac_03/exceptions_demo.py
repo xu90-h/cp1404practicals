@@ -16,3 +16,6 @@ except ValueError:
 except ZeroDivisionError:
     print("Cannot divide by zero!")
 print("Finished.")
+
+# 1. When user is inputting content that cannot be converted to an int.
+# 2. When the denominator is successfully converted to an integer and the program executes the line fraction = numerator/denominator
