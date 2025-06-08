@@ -35,4 +35,7 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
 
     price *= (1 + price_change)
-    print(f"${price:,.2f}")
+    number_of_days += 1
+    print(f"On day {number_of_days} price is ${price:,.2f}", file=out_file)
+
+out_file.close()
