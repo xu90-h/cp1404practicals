@@ -10,3 +10,9 @@ name = file.read()
 print(f"Hi! {name}")
 file.close()
 
+# Question 3: Read first two numbers from numbers.txt and sum them
+with open('numbers.txt', 'r') as file:
+    number1 = int(file.readline())
+    number2 = int(file.readline())
+    print(number1 + number2)
+
