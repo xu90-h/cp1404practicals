@@ -17,7 +17,7 @@ INITIAL_PRICE = 10.0
 FILENAME = "output.txt"
 
 number_of_days = 0
-out_file = open(FILENAME)
+out_file = open(FILENAME,'w')
 price = INITIAL_PRICE
 print(f"${price:,.2f}", file=out_file)
 
