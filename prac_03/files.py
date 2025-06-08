@@ -16,3 +16,9 @@ with open('numbers.txt', 'r') as file:
     number2 = int(file.readline())
     print(number1 + number2)
 
+# Question 4: Sum all numbers in numbers.txt
+with open('numbers.txt', 'r') as file:
+    total = 0
+    for line in file:
+        total += int(line)
+    print(total)
