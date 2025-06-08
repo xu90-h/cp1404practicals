@@ -14,9 +14,12 @@ MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
+FILENAME = "output.txt"
 
+number_of_days = 0
+out_file = open(FILENAME)
 price = INITIAL_PRICE
-print(f"${price:,.2f}")
+print(f"${price:,.2f}", file=out_file)
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
