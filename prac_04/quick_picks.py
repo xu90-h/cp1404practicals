@@ -21,3 +21,9 @@ def main():
     except ValueError:
         print("INvalid input. Please enter again.")
         return
+
+    for _ in range(quick_picks):
+        pick = quick_pick()
+        print(" ".join(f"{num:2}" for num in pick))
+
+main()
