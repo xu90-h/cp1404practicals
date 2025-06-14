@@ -19,7 +19,7 @@ def main():
         while quick_picks < 0:
             print("Please enter a non-negative number.")
     except ValueError:
-        print("INvalid input. Please enter again.")
+        print("Invalid input. Please enter again.")
         return
 
     for _ in range(quick_picks):
