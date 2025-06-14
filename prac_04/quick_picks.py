@@ -12,3 +12,12 @@ def quick_pick():
             numbers.append(number)
     numbers.sort()
     return numbers
+
+def main():
+    try:
+        quick_picks = int(input("How many quick picks?"))
+        while quick_picks < 0:
+            print("Please enter a non-negative number.")
+    except ValueError:
+        print("INvalid input. Please enter again.")
+        return
