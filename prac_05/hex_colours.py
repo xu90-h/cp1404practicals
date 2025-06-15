@@ -1,4 +1,4 @@
-CODE_TO_NAME = {
+COLOUR_CODES = {
     "AliceBlue": "#f0f8ff",
     "Coral": "#ff7f50",
     "Crimson": "#dc143c",
@@ -10,3 +10,13 @@ CODE_TO_NAME = {
     "MediumPurple": "#9370db",
     "Navy": "#000080"
 }
+
+print(COLOUR_CODES)
+
+colour_code = input("Enter a colour: ").title()
+while colour_code !="":
+    try:
+        print(f"{colour_code} is {COLOUR_CODES[colour_code]}")
+    except KeyError:
+        print("Invalid colour.")
+    colour_code = input("Enter a colour: ").title()
