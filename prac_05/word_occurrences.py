@@ -6,3 +6,4 @@ Actual:
 
 def main():
     text = input("Text: ")
+    words = text.split()
