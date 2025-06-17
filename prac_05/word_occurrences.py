@@ -14,3 +14,5 @@ def main():
             word_to_count[word] += 1
         else:
             word_to_count[word] = 1
+
+    sorted_words = sorted(word_to_count.keys())
