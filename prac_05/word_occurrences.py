@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 20 minutes
-Actual:
+Actual: 40 minutes
 """
 
 def main():
