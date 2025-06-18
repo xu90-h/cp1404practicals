@@ -11,3 +11,9 @@ def main():
     while email != "":
         email_to_name[email] = ""
         email = input("Email: ")
+
+def extract_name(email):
+    """Extract name from email."""
+    prefix = email.split('@')[0]
+    name = ' '.join(part.capitalize() for part in prefix.split('.'))
+    return name
