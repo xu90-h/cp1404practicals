@@ -12,9 +12,10 @@ file.close()
 
 # Question 3: Read first two numbers from numbers.txt and sum them
 with open('numbers.txt', 'r') as file:
-    number1 = int(file.readline())
-    number2 = int(file.readline())
-    print(number1 + number2)
+    total = 0
+    for line in file:
+        total += int(line)
+    print(total)
 
 # Question 4: Sum all numbers in numbers.txt
 with open('numbers.txt', 'r') as file:
