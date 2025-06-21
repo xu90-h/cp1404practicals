@@ -4,6 +4,22 @@ Estimate: 20 minutes
 Actual:    minutes
 """
 
+
+def main():
+    filename = "wimbledon.csv"
+    data = read_file(filename)
+
+    champions = count_champions(data)
+    countries = extract_countries(data)
+
+    print("Champions and number of wins:")
+    for champion, wins in champions.items():
+        print(f"{champion}: {wins}")
+
+    print("\nCountries in alphabetical order:")
+    countries_sorted = sorted(countries)
+    print(", ".join(countries_sorted))
+
 def read_file(filename):
     with open(filename, "r", encoding="utf-8-sig") as file:
         next(file)  # 跳过表头行
@@ -29,3 +45,5 @@ def extract_countries(data):
         country = row[2]
         countries.add(country)
     return countries
+
+main()
