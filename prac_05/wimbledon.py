@@ -22,3 +22,10 @@ def count_champions(data):
         else:
             champions[champion] = 1
     return champions
+
+def extract_countries(data):
+    countries = set()
+    for row in data:
+        country = row[2]
+        countries.add(country)
+    return countries
