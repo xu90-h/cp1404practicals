@@ -12,3 +12,13 @@ def read_file(filename):
             parts = line.strip().split(",")
             data.append(parts)
     return data
+
+def count_champions(data):
+    champions = {}
+    for row in data:
+        champion = row[1]
+        if champion in champions:
+            champions[champion] += 1
+        else:
+            champions[champion] = 1
+    return champions
