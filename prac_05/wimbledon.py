@@ -9,41 +9,44 @@ def main():
     filename = "wimbledon.csv"
     data = read_file(filename)
 
-    champions = count_champions(data)
-    countries = extract_countries(data)
+    country_to_wins = count_wins_by_country(data)
+    unique_champions = get_unique_champions(data)
 
-    print("Champions and number of wins:")
-    for champion, wins in champions.items():
-        print(f"{champion}: {wins}")
+    print("Wimbledon Champions:")
+    for country, wins in sorted(country_to_wins.items()):
+        print(f"{country} {wins}")
 
-    print("\nCountries in alphabetical order:")
-    countries_sorted = sorted(countries)
-    print(", ".join(countries_sorted))
+    print(f"\nThese {len(unique_champions)} countries have won Wimbledon:")
+    print(", ".join(unique_champions))
 
 def read_file(filename):
     with open(filename, "r", encoding="utf-8-sig") as file:
-        next(file)  # 跳过表头行
+        next(file)  # Skip header
         data = []
         for line in file:
             parts = line.strip().split(",")
             data.append(parts)
     return data
 
-def count_champions(data):
-    champions = {}
-    for row in data:
-        champion = row[1]
-        if champion in champions:
-            champions[champion] += 1
-        else:
-            champions[champion] = 1
-    return champions
 
-def extract_countries(data):
-    countries = set()
+def count_wins_by_country(data):
+    """Return a dictionary mapping countries to number of wins."""
+    country_to_wins = {}
     for row in data:
         country = row[2]
-        countries.add(country)
-    return countries
+        if country in country_to_wins:
+            country_to_wins[country] += 1
+        else:
+            country_to_wins[country] = 1
+    return country_to_wins
+
+
+def get_unique_champions(data):
+    """Return a sorted list of unique champion names."""
+    champions = set()
+    for row in data:
+        champion = row[1]
+        champions.add(champion)
+    return sorted(champions)
 
 main()
