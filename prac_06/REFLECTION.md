@@ -21,4 +21,4 @@ I will pay more attention to the process rather than focusing on the result.
 
 ## What is one request you have or change you suggest for this subject and/or your IT degree overall?
 
-No.
+No. 
