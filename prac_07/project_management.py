@@ -3,6 +3,49 @@ from datetime import datetime
 
 FILENAME = "projects.txt"
 
+
+def main():
+    """Main program."""
+    projects = []
+    load_projects(projects, "projects.txt")
+    print(f"Loaded {len(projects)} projects from projects.txt")
+
+    while True:
+        display_menu()
+        choice = input(">>> ").lower()
+
+        if choice == 'l':
+            filename = input("Enter filename to load: ")
+            load_projects(projects, filename)
+        elif choice == 's':
+            filename = input("Enter filename to save: ")
+            save_projects(projects, filename)
+        elif choice == 'd':
+            display_projects(projects)
+        elif choice == 'f':
+            filter_projects_by_date(projects)
+        elif choice == 'a':
+            add_new_project(projects)
+        elif choice == 'u':
+            update_project(projects)
+        elif choice == 'q':
+            if input("Would you like to save to projects.txt? (y/n): ").lower() == 'y':
+                save_projects(projects, "projects.txt")
+            print("Thank you for using custom-built project management software.")
+            break
+        else:
+            print("Invalid menu choice")
+
+def display_menu():
+    """Display menu options."""
+    print("\n- (L)oad projects")
+    print("- (S)ave projects")
+    print("- (D)isplay projects")
+    print("- (F)ilter projects by date")
+    print("- (A)dd new project")
+    print("- (U)pdate project")
+    print("- (Q)uit")
+
 def load_projects(filename):
     """Load the project from the file."""
     projects = []
