@@ -12,3 +12,8 @@ def load_guitars(filename):
             guitar = Guitar(name, year, cost)
             guitars.append(guitar)
     return guitars
+
+def display_guitars(guitars):
+    """Display a list of Guitar objects with numbering."""
+    for i, guitar in enumerate(guitars, 1):
+        print(f"Guitar {i}: {guitar}")
