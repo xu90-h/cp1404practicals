@@ -5,46 +5,47 @@ FILENAME = "projects.txt"
 
 
 def main():
-    """Main program."""
-    projects = []
-    load_projects(projects, "projects.txt")
-    print(f"Loaded {len(projects)} projects from projects.txt")
+    print("Welcome to Pythonic Project Management")
+    projects = load_projects(FILENAME)
+    print(f"Loaded {len(projects)} projects from {FILENAME}")
 
-    while True:
-        display_menu()
-        choice = input(">>> ").lower()
+    MENU = """- (L)oad projects  
+- (S)ave projects  
+- (D)isplay projects  
+- (F)ilter projects by date
+- (A)dd new project  
+- (U)pdate project
+- (Q)uit"""
 
-        if choice == 'l':
-            filename = input("Enter filename to load: ")
-            load_projects(projects, filename)
-        elif choice == 's':
-            filename = input("Enter filename to save: ")
-            save_projects(projects, filename)
-        elif choice == 'd':
+    print(MENU)
+    choice = input(">>> ").upper()
+
+    while choice != "Q":
+        if choice == "L":
+            filename = input("Filename: ")
+            projects = load_projects(filename)
+        elif choice == "S":
+            filename = input("Filename: ")
+            save_projects(filename, projects)
+        elif choice == "D":
             display_projects(projects)
-        elif choice == 'f':
-            filter_projects_by_date(projects)
-        elif choice == 'a':
+        elif choice == "F":
+            filter_projects(projects)
+        elif choice == "A":
             add_new_project(projects)
-        elif choice == 'u':
+        elif choice == "U":
             update_project(projects)
-        elif choice == 'q':
-            if input("Would you like to save to projects.txt? (y/n): ").lower() == 'y':
-                save_projects(projects, "projects.txt")
-            print("Thank you for using custom-built project management software.")
-            break
         else:
-            print("Invalid menu choice")
+            print("Invalid choice")
 
-def display_menu():
-    """Display menu options."""
-    print("\n- (L)oad projects")
-    print("- (S)ave projects")
-    print("- (D)isplay projects")
-    print("- (F)ilter projects by date")
-    print("- (A)dd new project")
-    print("- (U)pdate project")
-    print("- (Q)uit")
+        print(MENU)
+        choice = input(">>> ").upper()
+
+    save_choice = input("Would you like to save to projects.txt? ").strip().lower()
+    if save_choice in ["y", "yes"]:
+        save_projects(FILENAME, projects)
+
+    print("Thank you for using custom-built project management software.")
 
 def load_projects(filename):
     """Load the project from the file."""
@@ -81,7 +82,7 @@ def display_projects(projects):
         print(f"  {project}")
 
 
-def filter_projects_by_date(projects):
+def filter_projects(projects):
     """Filter items by date."""
     date_string = input("Show projects that start after date (dd/mm/yyyy): ")
     try:
@@ -132,3 +133,5 @@ def update_project(projects):
             print("Invalid project number")
     except ValueError:
         print("Invalid input")
+
+main()
