@@ -12,4 +12,4 @@ My name is [Huang Xu] and I am a student learning Python for the subject CP1404 
 
 ## Resources
 
-- [CP1404 Practicals instructions](https://github.com/xu90-h/cp1404practicals) 
+- [CP1404 Practicals instructions](https://github.com/xu90-h/cp1404practicals)
