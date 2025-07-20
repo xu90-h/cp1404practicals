@@ -1,3 +1,8 @@
+"""
+EST: 1hr
+ACT: 1.5hrs
+python codes for converting miles to kilometers
+"""
 
 from kivy.app import App
 from kivy.lang import Builder
