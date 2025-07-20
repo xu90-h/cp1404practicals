@@ -1,13 +1,7 @@
-"""
-CP1404 Week 11 Workshop - GUI program to convert miles to kilometres
-Lindsay Ward, IT@JCU
-06/10/2015
-"""
 
 from kivy.app import App
 from kivy.lang import Builder
 
-__author__ = 'Lindsay Ward'
 
 MILES_TO_KM = 1.60934
 
@@ -17,7 +11,7 @@ class MilesConverterApp(App):
     def build(self):
         """ build the Kivy app from the kv file """
         self.title = "Convert Miles to Kilometres"
-        self.root = Builder.load_file('convert_m_km_solution.kv')
+        self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
     def handle_calculate(self):
