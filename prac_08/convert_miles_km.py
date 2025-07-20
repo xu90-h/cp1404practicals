@@ -15,11 +15,17 @@ class MilesConverterApp(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
-    def handle_calculate(self):
-        """ handle calculation (could be button press or other call), output result to label widget """
-        value = self.get_validated_miles()
-        result = value * MILES_TO_KM
-        self.root.ids.output_label.text = str(result)
+    def handle_convert(self, value):
+        """handle a convert into kilometers, on call or Button pressed"""
+        try:
+            #convert input value to float type
+            miles = float(value)
+            kilometers = miles * MILES_TO_KM
+            # Display the kilometers in the output label
+            self.root.ids.output_label.text = str(kilometers)
+        except ValueError:
+            # Handle invalid inputs
+            self.root.ids.output_label.text = '0.0'
 
     def handle_increment(self, change):
         """
