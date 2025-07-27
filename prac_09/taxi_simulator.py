@@ -22,3 +22,23 @@ def main():
         if menu_choice == "c":
             print("Taxis available: ")
             display_taxis(taxis)
+            taxi_choice = int(input("Choose taxi: "))
+            try:
+                current_taxi = taxis[taxi_choice]
+            except IndexError:
+                print("Invalid choice")
+        elif menu_choice == "d":
+            if current_taxi:
+                current_taxi.start_fare()
+                drive_distance = float(input("Drive how far? "))
+                current_taxi.drive(drive_distance)
+                taxi_cost = current_taxi.get_fare()
+                print(f"Your {current_taxi.name} trip cost you ${taxi_cost:.2f}")
+                total_bill += taxi_cost
+            else:
+                print("You need to choose a taxi before you can drive")
+        else:
+            print("Invalid menu choice")
+        print(f"Bill to date: {total_bill:.2f}")
+        print(MENU)
+        menu_choice = input(">>> ").lower()
