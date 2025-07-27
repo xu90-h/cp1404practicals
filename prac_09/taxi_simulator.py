@@ -1,7 +1,7 @@
 """
 Taxi_simulator exercise
 EST:1.5hrs
-ACT:
+ACT:  hrs
 """
 
 from car import Car
@@ -42,3 +42,15 @@ def main():
         print(f"Bill to date: {total_bill:.2f}")
         print(MENU)
         menu_choice = input(">>> ").lower()
+
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis now: ")
+    display_taxis(taxis)
+
+def display_taxis(taxis):
+    """Display taxis in specified format"""
+    for i,taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
+
+if __name__ == '__main__':
+    main()
