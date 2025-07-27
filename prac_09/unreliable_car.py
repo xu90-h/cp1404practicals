@@ -14,3 +14,14 @@ class UnreliableCar(Car):
         """
         super().__init__(name, fuel)
         self.reliability = reliability
+
+    def drive(self, distance):
+        """Drive car only when the random number is less than the car's reliability"""
+        # generate random_number
+        random_number = randint(0, 100)
+        if random_number >= self.reliability:
+            distance = 0
+
+        # Call parent Class's drive method
+        drive_distance = super().drive(distance)
+        return drive_distance
