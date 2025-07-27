@@ -17,3 +17,8 @@ def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo",100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     print("Let's drive!")
     print(MENU)
+    menu_choice = input(">>> ").lower()
+    while menu_choice != "q":
+        if menu_choice == "c":
+            print("Taxis available: ")
+            display_taxis(taxis)
