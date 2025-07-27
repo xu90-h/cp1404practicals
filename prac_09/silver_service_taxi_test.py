@@ -15,5 +15,5 @@ def main():
     # use assert to check if correct
     assert round(fancy_taxi.get_fare(), 1) == 48.80, "Calculation is not correct"
 
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
