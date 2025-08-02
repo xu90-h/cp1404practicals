@@ -51,6 +51,19 @@ def run_tests():
     car = Car("Test car")
     assert car.fuel == 0
 
+def format_sentence(phrase):
+    """Format a phrase to a sentence that starts with Cap word, ends with a single full stop
+    >>> format_sentence('hello')
+    'Hello.'
+    >>> format_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_sentence('good question')
+    'Good question.'
+    """
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence = f"{sentence}."
+    return sentence
 
 run_tests()
 
