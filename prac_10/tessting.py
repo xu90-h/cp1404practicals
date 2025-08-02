@@ -65,6 +65,7 @@ def format_sentence(phrase):
         sentence = f"{sentence}."
     return sentence
 
+
 run_tests()
 
 # 3. Uncomment the following line and run the doctests
