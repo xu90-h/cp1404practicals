@@ -20,4 +20,4 @@ def main():
     except PageError:
         print(f"Page id {title} does not match any pages. Try another id!")
 
-    main()
+main()
